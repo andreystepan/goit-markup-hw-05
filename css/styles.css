@@ -238,7 +238,7 @@ img {
 }
 
 .backdrop.is-hidden .modal {
-  transform: scale(0) skew(30deg);
+  transform: translate(-50%, -50%) scale(0.4);
 }
 
 .modal {
@@ -252,15 +252,11 @@ img {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  transform: scale(1) translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   transition: transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-button {
-  text-align: right;
-}
-
-.but-close {
+.modal-close {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -280,8 +276,8 @@ img {
   fill: currentColor;
 }
 
-.but-close:hover,
-.but-close:focus {
+.modal-close:hover,
+.modal-close:focus {
   color: var(--accent-color);
 }
 /* section */
@@ -356,6 +352,7 @@ img {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
+  text-transform: uppercase;
   color: var(--primary-white-color);
 }
 
@@ -441,7 +438,8 @@ img {
   border: 1px solid var(--social-color);
   border-radius: 4px;
   color: var(--social-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .client-list:not(:first-child) {
   margin-left: 30px;
@@ -642,12 +640,11 @@ img {
 
 .portfolio-overlay {
   position: absolute;
-  display: flex;
-  align-items: center;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  padding: 63px 24px;
   background: rgba(33, 150, 243, 0.9);
 
   transform: translatey(100%);
@@ -657,8 +654,6 @@ img {
 .portfolio-overlay-text {
   font-size: 18px;
   line-height: 1.56;
-  padding-left: 24px;
-  padding-right: 24px;
 
   color: var(--primary-white-color);
 }
